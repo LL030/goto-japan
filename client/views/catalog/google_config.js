@@ -74,7 +74,8 @@ export const load = (apiKey, version, libraries, loadCn) => {
     }
     options['callback'] = 'vueGoogleMapsInit';
 
-    let baseUrl = 'https://maps.googleapis.com/';
+    //let baseUrl = 'https://maps.googleapis.com/';
+    let baseUrl = 'http://maps.google.cn/';
 
     if (typeof loadCn == 'boolean' && loadCn === true) {
       baseUrl = 'http://maps.google.cn/';
