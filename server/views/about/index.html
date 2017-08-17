@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>example - about</title>
+    <% if (env === "production") { %>
+        <link rel="stylesheet" href="/about/index.css">
+    <% } %>
+</head>
+<body>
+    <div class="total-container">
+        <div class="first-note">This page belong to express routes</div>
+        <br>
+        <div id="draw"></div>
+    </div>
+    <script src="/about/bundle.js"></script>
+    <% if (env !== "production" && reload === true) { %>
+        <script src="/reload/reload.js"></script>
+    <% } %>
+</body>
+</html>
