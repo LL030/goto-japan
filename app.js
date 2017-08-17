@@ -4,7 +4,7 @@ var express = require('express'),
 
 var isDev = process.env.NODE_ENV !== 'production';
 var app = express();
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 5000;
 
 app.engine('html', consolidate.ejs);
 app.set('view engine', 'html');
