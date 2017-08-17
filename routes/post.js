@@ -2,7 +2,7 @@ var express = require('express'),
     router = express.Router();
 
 // pg db
-var pg = require('pg');
+/*var pg = require('pg');
 
 router.get('/', function (request, response) {
   pg.connect(process.env.DATABASE_URL || "postgres://pang@localhost:5432/mylocaldb", function(err, client, done) {
@@ -36,7 +36,7 @@ router.get('/:id', function (request, response) {
       });
     }
   });
-});
+});*/
 
 /*router.get('/', function(req, res) {
     res.render('about');
