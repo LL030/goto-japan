@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>住宿</title>
+    <% if (env === "production") { %>
+        <link rel="stylesheet" href="/catalog/index.css">
+    <% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/c5031b8849.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="http://feversoul.com/jp/src/assets/css/ui.css">
+
+    <script type="text/javascript" src="http://feversoul.com/jp/src/assets/js/jquery.fullPage.js"></script>
+
+    <script type="text/javascript" src="http://feversoul.com/jp/src/assets/js/scrolloverflow.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://feversoul.com/jp/src/assets/css/jquery.fullPage.css?ver=1.0.1">
+    
+    <style>
+      .station{
+        /*margin-top: 200px;*/
+        padding-top: 30px!important;
+        padding-bottom: 30px!important;
+      }
+      .my-custom-class-for-label {
+          width: 50px; 
+          height: 20px;
+          border: 1px solid #eb3a44;
+          border-radius: 5px;
+          background: #fee1d7;
+          text-align: center;
+          line-height: 20px;
+          font-weight: bold;
+          font-size: 14px;
+          color: #eb3a44;
+      }
+      #timeline .timeline-item .timeline-icon svg{
+        left: 0px;
+      }
+    </style>
+</head>
+<body>
+    <div id="app">
+    </div>
+    <script src="/hotel/bundle.js"></script>
+    <% if (env !== "production" && reload === true) { %>
+        <script src="/reload/reload.js"></script>
+    <% } %>
+    <script src="http://developers.google.cn/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script><!-- 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVw1_JjXxdPMjZPluDqsXrVQV0AuaGRsU&callback=vueGoogleMapsInit"></script> -->
+</body>
+</html>

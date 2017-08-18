@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <div class="container-fullscreen">
-    <header>
+    <header class="hidden-md-up- hidden-sm-down-">
       <div class="d-flex flex-wrap h-100 ml-auto" style="width: 300px;">
         <nav class="align-items-center d-flex justify-content-end ml-auto">
-          <div class="nav-item"><router-link to="/">
-            <a class="active">行程</a>
-          </router-link></div>
-          <div class="nav-item"><router-link to="/blog">
-            <a>住宿</a>
-          </router-link></div>
           <div class="nav-item">
-            <router-link to="/test"><a>美食</a></router-link>
+            <a v-bind:class="{'active':active == 'index'}" href="/">行程</a>
+          </div>
+          <div class="nav-item">
+            <a v-bind:class="{'active':active == 'hotel'}" href="/hotel">住宿</a>
+          </div>
+          <div class="nav-item">
+            <a v-bind:class="{'active':active == 'food'}" href="/food">美食</a>
           </div>
         </nav>
       </div>
@@ -36,12 +36,14 @@ import '../common/css/bootstrap/bootstrap.scss'
 import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'app',
+  props: ['active'],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
       map: null
     }
-  }/*,
+  }
+  /*,
   created: function () {
     this.$parent.$on('create-map', this.createMap);
   },

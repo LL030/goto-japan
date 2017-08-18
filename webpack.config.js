@@ -8,6 +8,8 @@ var devConfig = {
     entry: {
         about: ['./client/views/about', hotMiddlewareScript],
         catalog: ['./client/views/catalog', hotMiddlewareScript],
+        hotel: ['./client/views/hotel', hotMiddlewareScript],
+        food: ['./client/views/food', hotMiddlewareScript]
     },
     output: {
         filename: './[name]/bundle.js',

@@ -497,6 +497,13 @@ export default {
           backgroundColor:'hsla(0, 0%, 0%, 0)'
         }
     },
+    beforeDestroy(){
+      console.log('schedule beforeDestroy');
+      //$.fn.fullpage.destroy('all');
+    },
+    destroyed(){
+      console.log('schedule destroyed');
+    },
     mounted() {
         $('#schedule').fullpage({
           anchors: ['a', 'b', 'c', 'd', 'e'],

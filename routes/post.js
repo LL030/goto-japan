@@ -38,8 +38,8 @@ router.get('/:id', function (request, response) {
   });
 });*/
 
-/*router.get('/', function(req, res) {
+router.get('/', function(req, res) {
     res.render('about');
-});*/
+});
 
 module.exports = router;

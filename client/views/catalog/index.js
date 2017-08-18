@@ -24,12 +24,14 @@ Vue.use(VueQuillEditor);
 Vue.use(VueWaypoint);
 Vue.use(vuescroll)
 
-import Home from './components/common/Home.vue'
+import Home from '../components/common/Home.vue'
 //import Test from './components/Test.vue'
 import store from '../../store/index.js'
 import { quillEditor } from 'vue-quill-editor'
-import Schedule from './components/common/Schedule.vue'
-import GMap from './components/plugin/GoogleMap.vue'
+import Schedule from '../components/common/Schedule.vue'
+import Hotel from '../components/common/Hotel.vue'
+
+import GMap from '../components/plugin/GoogleMap.vue'
 //import Blog from './components/article/Blog.vue'
 //import BlogContent from './components/article/BlogContent.vue'
 
@@ -40,6 +42,7 @@ Vue.component('GoogleMap', GMap);
 
 const router = new VueRouter({
   mode: 'history',
+  abstract: true,
   base: __dirname,
   routes: [
     {
@@ -47,7 +50,7 @@ const router = new VueRouter({
       component: Schedule
     },
     {
-      path: '/blog',
+      path: '/hotel',
       component: Schedule
     },
     {
@@ -66,5 +69,9 @@ var Main = window.Main = new Vue({
           this.$emit('create-map');
       }
   },
-  render: h => h(App)
+  render: h => h(App, {
+      props: {
+        active: 'index'
+      }
+    })
 }).$mount('#app')
