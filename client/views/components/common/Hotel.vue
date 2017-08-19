@@ -563,7 +563,6 @@ export default {
         console.log('hotel beforeCreate');
     },
     created(){
-        console.log('hotel created');
     },
     mounted() {
         console.log(this.from);
