@@ -12,10 +12,6 @@
     "production": "webpack --config webpack.production.config.js -p & cross-env NODE_ENV=production node app",
     "start": "webpack --config webpack.production.config.js -p --progress & cross-env NODE_ENV=production node app"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
-  },
   "keywords": [
     "node",
     "heroku",
