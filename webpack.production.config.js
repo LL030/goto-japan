@@ -5,8 +5,9 @@ var publicPath = 'http://localhost:5000/';
 
 var devConfig = {
     entry: {
-        about: ['./client/views/about'],
         catalog: ['./client/views/catalog'],
+        hotel: ['./client/views/hotel'],
+        food: ['./client/views/food']
     },
     output: {
         filename: './[name]/bundle.js',
