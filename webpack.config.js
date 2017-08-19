@@ -6,7 +6,6 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 var devConfig = {
     entry: {
-        about: ['./client/views/about', hotMiddlewareScript],
         catalog: ['./client/views/catalog', hotMiddlewareScript],
         hotel: ['./client/views/hotel', hotMiddlewareScript],
         food: ['./client/views/food', hotMiddlewareScript]
