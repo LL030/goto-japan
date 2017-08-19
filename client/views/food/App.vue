@@ -21,7 +21,6 @@
 </div>
 </template>
 <script>
-console.log('food app');
 import '../common/css/bootstrap/bootstrap.scss'
 export default {
   name: 'app',

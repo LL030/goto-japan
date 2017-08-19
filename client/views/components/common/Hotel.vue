@@ -564,7 +564,6 @@ export default {
     },
     created(){
         console.log('hotel created');
-        $.fn.fullpage.parallax.init();
     },
     mounted() {
         console.log(this.from);
