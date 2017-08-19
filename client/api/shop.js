@@ -5,7 +5,7 @@
 import axios from 'axios'
 
 const _article =[]; 
-axios({
+/*axios({
         method: 'get',
         url: '/post',
         responseType: 'json'
@@ -25,7 +25,7 @@ axios({
       });
       console.log(_article);
 });
-
+*/
 const _products = [
   {"id": 1, "title": "iPad 4 Mini", "price": 500.01, "inventory": 2},
   {"id": 2, "title": "H&M T-Shirt White", "price": 10.99, "inventory": 10},
