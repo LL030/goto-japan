@@ -31,6 +31,7 @@ import { quillEditor } from 'vue-quill-editor'
 import Schedule from '../components/common/Schedule.vue'
 import Hotel from '../components/common/Hotel.vue'
 import Food from '../components/common/Food.vue'
+import FoodB from '../components/common/FoodB.vue'
 
 import GMap from '../components/plugin/GoogleMap.vue'
 //import Blog from './components/article/Blog.vue'
@@ -46,10 +47,6 @@ const router = new VueRouter({
   abstract: true,
   base: __dirname,
   routes: [
-    {
-      path: '/',
-      component: Food
-    },
     {
       path: '/food',
       component: Food

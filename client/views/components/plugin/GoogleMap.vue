@@ -99,10 +99,9 @@ export default {
 
       if(this.markers){
         for (var i = 0; i < this.markers.length; ++i) {
-          console.log( this.markers[i]['loc']);
           this.mapMarker[i] = new google.maps.Marker({
             position: this.markers[i]['loc'],
-            //label: restaurants[i]['title'],
+            //label: this.markers[i]['title'],
             icon:icons[this.icon].icon,
             map: this.map
           });
