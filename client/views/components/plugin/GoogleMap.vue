@@ -1,10 +1,9 @@
 <template>
-  <div v-bind:id=" 'map-' + id" class="map">
+  <div v-bind:id=" 'map-' + id" class="map normal-scroll">
   </div>
 </template>
 <script>
 import { loaded } from '../../google_config.js';
-import '../../common/css/bootstrap/bootstrap.scss';
 export default {
   props: {
     id:0,
@@ -85,9 +84,9 @@ export default {
           center: this.center,
           zoom: this.zoom,
           scrollwheel: false,
-          navigationControl: false,
+          navigationControl: true,
           mapTypeControl: false,
-          scaleControl: false,
+          scaleControl: true,
           styles:this.styles,
           backgroundColor: this.backgroundColor,
           mapTypeControlOptions: {
@@ -101,8 +100,17 @@ export default {
         for (var i = 0; i < this.markers.length; ++i) {
           this.mapMarker[i] = new google.maps.Marker({
             position: this.markers[i]['loc'],
-            //label: this.markers[i]['title'],
-            icon:icons[this.icon].icon,
+            label: {
+              text:this.markers[i]['title'],
+              color:'#ee4d4d'
+            },
+            icon:{
+              url: icons[this.markers[i]['icon']?this.markers[i]['icon']:this.icon].icon,
+              scaledSize: new google.maps.Size(30, 30),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(15,30),
+              labelOrigin:  new google.maps.Point(40,33),
+            },
             map: this.map
           });
         }
@@ -140,7 +148,7 @@ export default {
           origin: start,
           destination: end,
           waypoints: waypts,
-          optimizeWaypoints: true,
+          optimizeWaypoints: false,
           travelMode: travelMode
       };
       directionsService.route(request, function(response, status) {

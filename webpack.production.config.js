@@ -2,19 +2,18 @@ var webpack = require('webpack');
 var path = require('path');
 
 var publicPath = 'http://localhost:5000/';
-
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 var devConfig = {
     entry: {
         catalog: ['./client/views/catalog'],
-        hotel: ['./client/views/hotel'],
-        food: ['./client/views/food']
+        dashboard: ['./client/views/dashboard']
     },
     output: {
         filename: './[name]/bundle.js',
         path: path.resolve(__dirname, './public'),
         publicPath: publicPath
     },
-    devtool: 'eval-source-map',
     module: {
         rules: [
             {
@@ -30,11 +29,6 @@ var devConfig = {
                   }
                   // other vue-loader options go here
                 }
-            },
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
             },
             {
                 test: /\.(png|jpg)$/,
@@ -55,13 +49,12 @@ var devConfig = {
                     'resolve-url-loader',
                     'sass-loader?sourceMap'
                 ]
-            }
+            },
         ]
     },
-    resolve: {
-        alias: {
-          'vue$': 'vue/dist/vue'
-        }
+    externals:{
+        "vue":"Vue",
+              "vue-router":"VueRouter"
     }
 };
 

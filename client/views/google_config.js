@@ -10,6 +10,8 @@ export const loaded = new Promise((resolve, reject) => { // eslint-disable-line 
   window['vueGoogleMapsInit'] = resolve;
 });
 
+
+
 /**
  * @param apiKey    API Key, or object with the URL parameters. For example
  *                  to use Google Maps Premium API, pass
@@ -45,6 +47,7 @@ export const load = (apiKey, version, libraries, loadCn) => {
   }
   if (!setUp) {
     const googleMapScript = document.createElement('SCRIPT');
+    const markerScript = document.createElement('SCRIPT');
 
     // Allow apiKey to be an object.
     // This is to support more esoteric means of loading Google Maps,
@@ -85,11 +88,19 @@ export const load = (apiKey, version, libraries, loadCn) => {
       Object.keys(options)
         .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(options[key]))
         .join('&');
+    
+      Object.keys(options)
+        .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(options[key]))
+        .join('&');
+
+    let markerurl = 'http://developers.google.cn/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js';
 
     if (version) {
       url = url + '&v=' + version;
     }
-
+//<script src="http://developers.google.cn/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    markerScript.setAttribute('src', markerurl);
+    document.body.appendChild(markerScript);
     googleMapScript.setAttribute('src', url);
     googleMapScript.setAttribute('async', '');
     googleMapScript.setAttribute('defer', '');

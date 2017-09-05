@@ -1,14 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var publicPath = 'http://localhost:3000/';
+var publicPath = 'http://localhost:5000/';
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 var devConfig = {
     entry: {
         catalog: ['./client/views/catalog', hotMiddlewareScript],
-        hotel: ['./client/views/hotel', hotMiddlewareScript],
-        food: ['./client/views/food', hotMiddlewareScript]
+        dashboard: ['./client/views/dashboard', hotMiddlewareScript],
     },
     output: {
         filename: './[name]/bundle.js',
@@ -67,7 +66,12 @@ var devConfig = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
-    ]
+    ],
+    externals:{
+        "vue":"Vue",
+              "vue-router":"VueRouter"
+    }
 };
 
 module.exports = devConfig;
+

@@ -22,7 +22,6 @@
 </template>
 <script>
 //import 'bootstrap/dist/css/bootstrap.css'
-import '../common/css/bootstrap/bootstrap.scss'
 export default {
   name: 'app',
   props: ['active'],

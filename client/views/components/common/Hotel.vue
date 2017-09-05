@@ -30,6 +30,14 @@
                     *夕泊入席 19:30 前
                   </p>
                   <p v-if="index == 3">
+                    3-15-21, Nishiki, Naka-ku, 名古屋站/繁华街, 名古屋, 日本 460-0003<br/>
+                    鄰近車站：榮町<br/>
+                    價錢：323RMB／晚<br/>
+                    CheckIn：09291500（預約）<br/>
+                    CheckOut：09301000<br/>
+                    *夕泊入席 19:30 前
+                  </p>
+                  <p v-if="index == 4">
                     地址：〒607-8142　京都市山科区東野中ノ井上町1-25　SAKIZO東野ビル　205号室<br/>
                     鄰近車站：東野<br/>
                     價錢：323RMB／晚<br/>
@@ -40,15 +48,15 @@
               </div>
             </div>
             <div class="col-md-7">
-              <div class="mapcard-map"  v-bind:id="index">
+              <div class="mapcard-map normal-scroll"  v-bind:id="index">
                 <GoogleMap :id='index' :center='center' :styles='styles' :from='from[index]' :to='to[index]' :waypts='waypts[index]' :markers='markers[index]'></GoogleMap>
                </div>
             </div>
           </div>
            <div class="mt-5">
-              <div class="photos-gallery d-flex flex-wrap align-items-center">
-                <div v-for="(p, index) in h.photos" :key="index" class="">
-                    <div class="rs-img-bg div-circle" v-bind:style="{width:'150px',height:'150px',margin:'20px',backgroundImage:'url('+p+')'}">
+              <div class="photos-gallery row">
+                <div v-for="(p, index) in h.photos" :key="index" class="col-6 col-sm-3" style="padding:20px">
+                    <div class="rs-img-bg div-circle" v-bind:style="{width:'100%',paddingTop:'100%',paddingBottom:'0',margin:'20px',backgroundImage:'url('+p+')'}">
                     </div>
                 </div>
               </div>
@@ -103,6 +111,20 @@ var hotels = [
       'http://cdn.jalan.jp/jalan/images/pict3L/Y1/Y325831/Y325831902.jpg',
       'http://cdn.jalan.jp/jalan/images/pict3L/Y1/Y325831/Y325831AD5.jpg',
       'http://cdn.jalan.jp/jalan/images/pict3L/Y1/Y325831/Y325831883.jpg'
+    ]
+  },
+  {
+    loc:{lat:35.171230,lng:136.907094},
+    station:{lat:35.170436,lng:136.908821},
+    title:'名古屋特拉斯蒂酒店',
+    icon:'info',
+    stationPoint:'stationPoint',
+    bgimg:'https://www.tokyuhotelsjapan.com/zh-tw/cm_pg_bridge/1416072672389/main3/457/877/[%E7%B9%81]R%20%E5%90%8D%E5%8F%A4%E5%B1%8B%E6%A0%84.jpg',
+    photos:[
+      'https://r-ak.bstatic.com/images/hotel/max1024x768/130/13016644.jpg',
+      'https://r-ak.bstatic.com/images/hotel/max1024x768/130/13016660.jpg',
+      'https://r-ak.bstatic.com/images/hotel/max1024x768/130/13015849.jpg',
+      'https://r-ak.bstatic.com/images/hotel/max1024x768/130/13015977.jpg'
     ]
   },
   {
@@ -560,22 +582,31 @@ export default {
         }
     },
     beforeCreate(){
-        console.log('hotel beforeCreate');
+      if($('.plan-back').length>0){
+        $('.plan-back').remove();
+      }
+      if($('.schedule-map').length>0){
+        $('.schedule-map').remove();
+      }
+      if ($( 'html' ).hasClass( 'fp-enabled' ) ) {
+        $.fn.fullpage.destroy('all');
+      }
     },
     created(){
     },
+    beforeDestroy(){
+    },
+    destroyed(){
+    },
     mounted() {
-        console.log(this.from);
-        console.log(this.to);
         $('#mapcard').fullpage({
-          anchors: ['a', 'b', 'c', 'd', 'e'],
           menu: '#menu',
           scrollingSpeed: 1000,
           navigation: true,
           navigationPosition: 'right',
           scrollOverflow: true,
           navigationTooltips: ['東京', '湘南', '箱根', '京都'],
-          normalScrollElements:'.mapcard-map',
+          normalScrollElements:'.normal-scroll',
           afterLoad: function(anchorLink, index){
             var loadedSection = $(this);
             //console.log(index);
@@ -584,6 +615,7 @@ export default {
             //$('body').css('background','linear-gradient(to right, rgba(0, 0, 0, 0.2),  rgba(0, 0, 0, 0.2)), url('+ $('.hotels-item.active').data('bgimg')+')');
           }
         });
+        $.fn.fullpage.reBuild();
     }
 }
 

@@ -1,93 +1,225 @@
 <template>
 <div id="schedule">
-    <div class="section">
-      <div class="map-container" style="height:65vw;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.2),  rgba(0, 0, 0, 0.1)),url(http://feversoul.com/jp/src/assets/img/banner/京都.jpg);background-size: cover;">
-        <div id="preview"></div>
-        <input id="toggle" type="checkbox" checked>
-        <label for="toggle"></label>
-        <GoogleMap :id='id' :center='center' :styles='styles' :from='from' :to='to' :waypts='waypts' :markers='markers'></GoogleMap>
-      </div>
-      <div class="station">
-        <div class="d-flex flex-wrap">
-          <div class="col station-item">
-            <span class="btn-radius small" id="gotokyo" data-point='0'>東京都</span>
-          </div>
-          <div class="col station-item hidden-sm-down">
-            <span class="icon-arrow auto" ></span>
-          </div>
-          <div class="col station-item">
-            <span class="btn-radius small" id="gokamakura" data-point='1'>湘南</span>
-          </div>
-          <div class="col station-item hidden-sm-down">
-            <span class="icon-arrow auto" ></span>
-          </div>
-          <div class="col station-item">
-            <span class="btn-radius small" id="gohakone" data-point='2'>箱根</span>
-          </div>
-          <div class="col station-item hidden-sm-down">
-            <span class="icon-arrow auto" ></span>
-          </div>
-          <div class="col station-item">
-            <span class="btn-radius small" id="gonagoya" data-point='3'>名古屋</span>
-          </div>
-          <div class="col station-item hidden-sm-down">
-            <span class="icon-arrow auto" ></span>
-          </div>
-          <div class="col station-item">
-            <span class="btn-radius small" id="gokyoto" data-point='4'>京都府</span>
-          </div>
+    <div class="map-container schedule-map" style="position: absolute;z-index: 1;top:0;padding-bottom: 20px;height:100vh;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.2),  rgba(0, 0, 0, 0.1)),url(http://feversoul.com/jp/src/assets/img/banner/京都.jpg);background-size: cover;">
+      <GoogleMap :id='id' :center='center' :styles='styles' :from='from' :to='to' :waypts='waypts' :markers='markers'></GoogleMap>
+    </div>
+    <div class="station hidden-sm-down hidden-md-up">
+      <div class="d-flex flex-wrap">
+        <div class="col station-item">
+          <span class="btn-radius small" id="gotokyo" data-point='0'>東京都</span>
+        </div>
+        <div class="col station-item hidden-sm-down">
+          <span class="icon-arrow auto" ></span>
+        </div>
+        <div class="col station-item">
+          <span class="btn-radius small" id="gokamakura" data-point='1'>湘南</span>
+        </div>
+        <div class="col station-item hidden-sm-down">
+          <span class="icon-arrow auto" ></span>
+        </div>
+        <div class="col station-item">
+          <span class="btn-radius small" id="gohakone" data-point='2'>箱根</span>
+        </div>
+        <div class="col station-item hidden-sm-down">
+          <span class="icon-arrow auto" ></span>
+        </div>
+        <div class="col station-item">
+          <span class="btn-radius small" id="gonagoya" data-point='3'>名古屋</span>
+        </div>
+        <div class="col station-item hidden-sm-down">
+          <span class="icon-arrow auto" ></span>
+        </div>
+        <div class="col station-item">
+          <span class="btn-radius small" id="gokyoto" data-point='4'>京都府</span>
         </div>
       </div>
     </div>
-    <div class="section">
-      <h1 class="project-name">行程</h1>
-      <div class="content" id="content-schedule">
-        <div id="timeline">
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
-              <path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
-              </svg>
-            </div>
-            <div class="timeline-content">
-              <h5 class="h5">Day 1 東京都 - 淺草、上野</h5>
-              <p>
-                19:25 落機<br/>
-                20:30 Check In<br/>
-                21:00 晴空塔（8：00～22：00）-> 隅田川公園 <br/>
-                <!-- ふらっとQUSUMI -->
-              </p>
-              <div class="w-100 text-right">
-                <span class="btn" >MORE</span>
+    <div class="">
+      <div>
+        <div class="content" id="content-schedule">
+          <div id="timeline">
+            <div class="section">
+              <div class="inner-section-fixed">
+                <i class="fixed-line">
+                    <div class="timeline-icon">
+                      <div class="start"></div>
+                    </div>
+                </i>
               </div>
             </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
-              <path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
-              </svg>
+            <div class="section">
+              <div class="inner-section-fixed">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="h5">Day1(0922) 東京都 - 淺草、上野</h5>
+                    <p>
+                      19:25 落機<br/>
+                      20:30 Check In<br/>
+                      21:00 晴空塔（8：00～22：00）-> 隅田川公園 <br/>
+                      <!-- ふらっとQUSUMI -->
+                    </p>
+                    <div class="w-100 text-right">
+                      <span class="btn"><router-link to="/plan/1">MORE</router-link></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content right">
+                    <h5 class="h5">Day2(0923)  - 築地、台場、汐留</h5>
+                    <p>
+                       日比谷公園散步看楓葉，Caretta 45F 觀景。<br/>
+                       築地市場新鮮海產 「築地站」，波除稻荷神社OR本願寺參觀<br/>
+                       月島漫步<br/>
+                       台場高達，自由女神，睇彩虹橋<br/> 
+                       大江戶溫泉物語<br/>
+                    </p>
+                    <div class="w-100 text-right">
+                      <span class="btn"><router-link to="/plan/2">MORE</router-link></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="timeline-content right">
-              <h5 class="h5">Day 2 東京都 - 築地市場、台場、汐留、銀座</h5>
-              <p>
-                上午 築地市場新鮮海產 <br/>
-              </p>
+            <div class="section">
+              <div class="inner-section-fixed">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="h5">Day3(0924) 東京都 - 千葉 Game Show</h5>
+                    <p>
+                      上午下午 千葉 -> GameShow -> <br/>
+                      下午 選項1 水鄉佐原 ； 選項2 勝浦 ； 選項3 秋葉原
+                    </p>
+                    <div class="w-100 text-right">
+                      <span class="btn"><router-link to="/plan/3">MORE</router-link></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content right">
+                    <h5 class="h5">Day4(0925) 東京都 - 三鷹、練馬區、中野區</h5>
+                    <p>
+                      雷門 -> 仲見世通 -> 淺草神社 <br/>
+                      吉卜力美術館 -> 中野區食烤肉 ->新宿逛街<br/>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-icon">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
-              <path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
-              </svg>
+            <div class="section">
+              <div class="inner-section-fixed">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="h5">Day5(0926) 東京都 - 新宿、澀谷、目黑</h5>
+                    <p>
+                      澀谷101 <br/>
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content right">
+                    <h5 class="h5">Day6(0927) 鎌倉市 - 湘南高校前、江之島</h5>
+                    <p>
+                       湘南高校前、江之島 <br/>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="timeline-content right">
-              <h5 class="h5">Day 2 東京都 - 築地市場、台場、汐留、銀座</h5>
-              <p>
-                上午 築地市場新鮮海產 <br/>
-              </p>
+            <div class="section">
+              <div class="inner-section-fixed">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="h5">Day7(0928) 箱根 - 溫泉、蘆之湖</h5>
+                    <p>
+                       宅酒店，嘆溫泉，湖中鳥居 <br/>
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content right">
+                    <h5 class="h5">Day8(0929) 名古屋 - ？？？</h5>
+                    <p>
+                      大須う <br/>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="inner-section-fixed">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="h5">Day9(0930) 京都府 - ？？？</h5>
+                    <p>
+                      ？？？ <br/>
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content right">
+                    <h5 class="h5">Day10(1001) 京都府 - ？？？</h5>
+                    <p>
+                      ？？？ <br/>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="inner-section-fixed">
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content">
+                    <h5 class="h5">Day11(1002) 京都府 - ？？？</h5>
+                    <p>
+                      ？？？ <br/>
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon">
+                    <div class="start"></div>
+                  </div>
+                  <div class="timeline-content right">
+                    <h5 class="h5">Day12(1003) 東京 - 回程</h5>
+                    <p>
+                      ？？？ <br/>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -98,9 +230,6 @@
 
 <script>
 //import GoogleMap from '../plugin/GoogleMap.vue'
-var googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyCVw1_JjXxdPMjZPluDqsXrVQV0AuaGRsU'
-});
 export default {
     /* eslint-disable no-undef */
     name:"schedule",
@@ -498,70 +627,58 @@ export default {
           zoom:19
         }
     },
-    beforeDestroy(){
-      console.log('schedule beforeDestroy');
-      //$.fn.fullpage.destroy('all');
+    beforeCreate(){
+      if($('.plan-back').length>0){
+        $('.plan-back').remove();
+      }
+      if ($( 'html' ).hasClass( 'fp-enabled' ) ) {
+        $.fn.fullpage.destroy('all');
+      }
     },
     destroyed(){
-      console.log('schedule destroyed');
     },
     mounted() {
-        $('#schedule').fullpage({
-          anchors: ['a', 'b', 'c', 'd', 'e'],
-          menu: '#menu',
-          scrollingSpeed: 1000,
-          navigation: true,
-          scrollOverflow: true,
-          navigationPosition: 'right',
-          navigationTooltips: ['東京', '湘南', '箱根', '京都'],
-          normalScrollElements:'#map',
-          afterLoad: function(anchorLink, index){
-            var loadedSection = $(this);
-            console.log(index);
-            //using index
-            //console.log($('.mapcard-item.active').data('bgimg'))
-            //$('body').css('background','linear-gradient(to right, rgba(0, 0, 0, 0.2),  rgba(0, 0, 0, 0.2)), url('+ $('.hotels-item.active').data('bgimg')+')');
-          }
-        });
-        googleMapsClient.geocode({
-          address: '京都'
-        }, function(err, response) {
-          if (!err) {
-            console.log(response.json.results[0]);
-          }
-        });
+      $('#schedule').fullpage({
+        menu: '#menu',
+        scrollingSpeed: 1000,
+        scrollOverflow: true,
+        normalScrollElements:'.normal-scroll',
+        fixedElements:'.schedule-map',
+        afterLoad: function(anchorLink, index){
+          var loadedSection = $(this);
+          console.log(index);
+        }
+      });
+      $.fn.fullpage.reBuild();
     }
 }
 
 </script>
 
 <style lang="scss">
-.map-container {
-  #map{
-    position: relative;
+#schedule{
+  position: relative;
+  z-index: 2;
+  #timeline{
     &:before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-      background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-      background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-      background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
-      -webkit-background-size: 3px 3px;
-      -moz-background-size: 3px 3px;
-      background-size: 3px 3px;
+      content: "";
+      top:70vh!important;
+      //display: none;
     }
   }
-}
-#schedule{
   .section{
-    &:first-child{
-      padding-top: 0px;
+    .timeline-item{
+      //height: 40vh;
     }
-    padding-top: 40px;
+    .inner-section-fixed{
+      // position:absolute;
+      // top:40px;
+      // left:0;
+      padding-top: 100px;
+      width:100%;
+      min-height:100%;
+      height:auto;
+    }
   }
 }
 </style>
