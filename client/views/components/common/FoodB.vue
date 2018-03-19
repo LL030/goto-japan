@@ -1,14 +1,14 @@
 <template>
 <div id="schedule">
     <div class="section">
-      <div class="map-container" style="height:65vw;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.2),  rgba(0, 0, 0, 0.1)),url(http://feversoul.com/jp/src/assets/img/banner/sushi.jpg);background-size: cover;">
+      <div class="map-container" style="height:65vw;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.2),  rgba(0, 0, 0, 0.1)),url(http://www.pilakuma.com/jpt/src/assets/img/banner/sushi.jpg);background-size: cover;">
         <div id="preview"></div>
         <input id="toggle" type="checkbox" checked>
         <label for="toggle"></label>
         <GoogleMap :id='id' :center='center' :styles='mainStyles' :markers='markers' :zoom='zoom' :icon='icon'></GoogleMap>
       </div>
     </div>
-    <div v-for="(h, index) in restaurants" :key="index" class="section" data-bgimg="http://feversoul.com/jp/src/assets/img/banner/skytree.jpg" v-bind:style="{backgroundImage:'linear-gradient(to right, rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('+ h.img +')'}" v-bind:id="index">
+    <div v-for="(h, index) in restaurants" :key="index" class="section" data-bgimg="http://www.pilakuma.com/jpt/src/assets/img/banner/skytree.jpg" v-bind:style="{backgroundImage:'linear-gradient(to right, rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('+ h.img +')'}" v-bind:id="index">
       <div class="row" style="padding:5%;">
         <div class="col-md-5">
           <div class="mapcard-content">
@@ -37,7 +37,7 @@ var restaurants = [
         title:'ちゃんこ割烹大内',
         content:'東京都墨田区両国2-9-６',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/ちゃんこ割烹大内.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/ちゃんこ割烹大内.jpg',
         icon:'station'
       },
       {
@@ -46,7 +46,7 @@ var restaurants = [
         title:'いろり家',
         content:'神奈川県足柄郡箱根町宮ノ下296',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/いろり家.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/いろり家.jpg',
         icon:'station'
       },
       {
@@ -55,7 +55,7 @@ var restaurants = [
         title:'シャンウェイ',
         content:'東京都渋谷区神宮前3−7−５大鉄ビル２階',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/シャンウェイ.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/シャンウェイ.jpg',
         icon:'station'
       },
       {
@@ -64,7 +64,7 @@ var restaurants = [
         title:'さいき',
         content:'東京都渋谷区恵比寿西1−7−12',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/さいき.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/さいき.jpg',
         icon:'station'
       },
       {
@@ -82,7 +82,7 @@ var restaurants = [
         title:'牛かつおか田',
         content:'東京都港区新橋2-16-1ニュー新橋ビルB１F',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/牛かつおか田.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/牛かつおか田.jpg',
         icon:'station'
       }
 ];

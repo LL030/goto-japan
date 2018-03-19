@@ -1,6 +1,6 @@
 <template>
 <div id="schedule">
-    <div class="map-container schedule-map" id="home-bg-map" style="position: absolute;z-index: 1;top:0;padding-bottom: 20px;height:100vh;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.1),  rgba(0, 0, 0, 0.1)),url(http://feversoul.com/jp/src/assets/img/banner/京都.jpg);background-size: cover;overflow:hidden">
+    <div class="map-container schedule-map" id="home-bg-map" style="position: absolute;z-index: 1;top:0;padding-bottom: 20px;height:100vh;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.1),  rgba(0, 0, 0, 0.1)),url(http://www.pilakuma.com/jpt/src/assets/img/banner/京都.jpg);background-size: cover;overflow:hidden">
       <div class="falling-leaves"></div>
       <div v-bind:style="{width:'120%',height:'120%',transform:'rotate('+ mapRotate +'deg)'}">
       <GoogleMap :panTo='panTo' :id='id' :zoom='8' :center='center' :from='from' :to='to' :waypts='waypts' :markers='markers'></GoogleMap>

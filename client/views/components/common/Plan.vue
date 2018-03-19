@@ -353,7 +353,7 @@ var restaurants = [
         title:'餃子莊 ムロ',
         content:'東京都新宿区高田馬場1丁目33-2',
         open:' 17：00ー23：00',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/餃子莊ムロ.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/餃子莊ムロ.jpg',
         icon:'station'
       },
       {
@@ -362,7 +362,7 @@ var restaurants = [
         title:'居酒屋魚貞',
         content:'東京都渋谷区幡ヶ谷2−8−13「月〜土」',
         open:'11:30-13:30 ; 17:00-23:30',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/居酒屋魚貞.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/居酒屋魚貞.jpg',
         icon:'station'
       },
       {
@@ -371,7 +371,7 @@ var restaurants = [
         title:'満天堂',
         content:'東京都練馬区練馬4-18-15',
         open:'11:30-14:00 ; 16:30-22:00 (定休日火曜日)',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/満天堂.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/満天堂.jpg',
         icon:'station'
       },
       {
@@ -380,7 +380,7 @@ var restaurants = [
         title:'ミヤザキ商店',
         content:'東京都杉並区和田1−17−９',
         open:'18：00-2：00',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/ミヤザキ商店.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/ミヤザキ商店.jpg',
         icon:'station'
       },
       {
@@ -389,7 +389,7 @@ var restaurants = [
         title:'やきとり「庄助」',
         content:'東京都江東区富岡八幡宮',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/やきとり「庄助」.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/やきとり「庄助」.jpg',
         icon:'station'
       },
       {
@@ -398,7 +398,7 @@ var restaurants = [
         title:'みやこや',
         content:'東京都中野区鷺宮',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/みやこや.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/みやこや.jpg',
         icon:'station'
       },
       {
@@ -407,7 +407,7 @@ var restaurants = [
         title:'お好み焼きと鉄板焼HIROKI',
         content:'東京都世田区北沢',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/お好み焼きと鉄板焼HIROKI.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/お好み焼きと鉄板焼HIROKI.jpg',
         icon:'station'
       },
       {
@@ -416,7 +416,7 @@ var restaurants = [
         title:'天ぷら「中山」',
         content:'東京都中央区日本橋人形町1-10-8',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/天ぷら「中山」.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/天ぷら「中山」.jpg',
         icon:'station'
       },
       {
@@ -425,7 +425,7 @@ var restaurants = [
         title:'平和苑（焼肉）',
         content:'沼袋駅',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/平和苑（焼肉）.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/平和苑（焼肉）.jpg',
         icon:'station'
       },
       {
@@ -434,7 +434,7 @@ var restaurants = [
         title:'ちゃんこ割烹大内',
         content:'東京都墨田区両国2-9-６',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/ちゃんこ割烹大内.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/ちゃんこ割烹大内.jpg',
         icon:'station'
       },
       {
@@ -443,7 +443,7 @@ var restaurants = [
         title:'いろり家',
         content:'神奈川県足柄郡箱根町宮ノ下296',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/いろり家.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/いろり家.jpg',
         icon:'station'
       },
       {
@@ -452,7 +452,7 @@ var restaurants = [
         title:'シャンウェイ',
         content:'東京都渋谷区神宮前3−7−５大鉄ビル２階',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/シャンウェイ.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/シャンウェイ.jpg',
         icon:'station'
       },
       {
@@ -461,7 +461,7 @@ var restaurants = [
         title:'さいき居酒屋',
         content:'東京都渋谷区恵比寿西1−7−12',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/さいき.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/さいき.jpg',
         icon:'station'
       },
       {
@@ -479,7 +479,7 @@ var restaurants = [
         title:'牛かつおか田',
         content:'東京都港区新橋2-16-1ニュー新橋ビルB１F',
         open:'',
-        img:'http://feversoul.com/jp/src/assets/img/restaurants/牛かつおか田.jpg',
+        img:'http://www.pilakuma.com/jpt/src/assets/img/restaurants/牛かつおか田.jpg',
         icon:'station'
       }
 ];
@@ -498,7 +498,7 @@ var plans = [
 			{loc:{lat:35.712487,lng:139.803965},title:'隅田川公園'},
 			{loc:{lat:35.710063,lng:139.810700},title:'晴空塔'}
 		],
-		bgimg:'http://feversoul.com/jp/src/assets/img/banner/skytree2.jpg'
+		bgimg:'http://www.pilakuma.com/jpt/src/assets/img/banner/skytree2.jpg'
 	},
   {
     title:"Day 2 東京都 - 築地、台場、",

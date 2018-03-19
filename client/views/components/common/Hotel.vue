@@ -1,7 +1,7 @@
 <template>
   <div class="content" id="content-mapcard">
     <div id="mapcard">
-      <div v-for="(h, index) in hotels" :key="index" class="mapcard-item section" data-bgimg="http://feversoul.com/jp/src/assets/img/banner/skytree.jpg" v-bind:style="{backgroundImage:'linear-gradient(to right, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('+ h.bgimg +')'}">
+      <div v-for="(h, index) in hotels" :key="index" class="mapcard-item section" data-bgimg="http://www.pilakuma.com/jpt/src/assets/img/banner/skytree.jpg" v-bind:style="{backgroundImage:'linear-gradient(to right, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('+ h.bgimg +')'}">
         <div class="inner-section">
           <div class="row">
             <div class="col-md-5">
@@ -76,7 +76,7 @@ var hotels = [
     title:'墨田民宿',
     icon:'info',
     stationPoint:'stationPoint',
-    bgimg:'http://feversoul.com/jp/src/assets/img/banner/skytree.jpg',
+    bgimg:'http://www.pilakuma.com/jpt/src/assets/img/banner/skytree.jpg',
     photos:[
       'https://a0.muscache.com/im/pictures/ca9f1d9a-fba6-4104-8030-591949f59bcd.jpg?aki_policy=xx_large',
       'https://a0.muscache.com/im/pictures/3c190b8f-2bce-4470-8740-d7d8e1c4b0c6.jpg?aki_policy=x_large',
@@ -90,7 +90,7 @@ var hotels = [
     title:'AS ONE STYLE IN 湘南',
     icon:'info',
     stationPoint:'stationPoint',
-    bgimg:'http://feversoul.com/jp/src/assets/img/banner/kamakuraroad.jpg',
+    bgimg:'http://www.pilakuma.com/jpt/src/assets/img/banner/kamakuraroad.jpg',
     photos:[
       'https://pix6.agoda.net/hotelImages/161/1615512/1615512_16112200560048954440.jpg?s=1024x768',
       'https://pix6.agoda.net/hotelImages/161/1615512/1615512_16111511420048724555.jpg?s=1024x768',
@@ -105,7 +105,7 @@ var hotels = [
     title:'メルヴェール箱根強羅',
     icon:'info',
     stationPoint:'stationPoint',
-    bgimg:'http://feversoul.com/jp/src/assets/img/banner/箱根.jpg',
+    bgimg:'http://www.pilakuma.com/jpt/src/assets/img/banner/箱根.jpg',
     photos:[
       'https://tabiiro.jp/lpimg/yado/100933/guestroom/img2.jpg',
       'http://cdn.jalan.jp/jalan/images/pict3L/Y1/Y325831/Y325831902.jpg',
@@ -132,7 +132,7 @@ var hotels = [
     station:{lat:34.981626,lng:135.816595},
     title:'東野民宿',
     stationPoint:'stationPoint',
-    bgimg:'http://feversoul.com/jp/src/assets/img/banner/京都.jpg',
+    bgimg:'http://www.pilakuma.com/jpt/src/assets/img/banner/京都.jpg',
     photos:[
       'https://a0.muscache.com/im/pictures/ca12e056-6e16-41d4-8fa7-7aa652754198.jpg?aki_policy=x_large',
       'https://a0.muscache.com/im/pictures/98234dd4-1eb4-414c-b572-a1a4038b7621.jpg?aki_policy=x_large',

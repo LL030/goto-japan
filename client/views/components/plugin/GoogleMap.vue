@@ -438,16 +438,16 @@ export default {
       // getting the DOM element where to create the map
       var icons = {
         point:{
-          icon: 'http://feversoul.com/jp/src/assets/img/maps-and-flags.svg'
+          icon: 'http://www.pilakuma.com/jpt/src/assets/img/maps-and-flags.svg'
         },
         food:{
-          icon: 'http://feversoul.com/jp/src/assets/img/sushi-c.svg'
+          icon: 'http://www.pilakuma.com/jpt/src/assets/img/sushi-c.svg'
         },
         stationB:{
-          icon: 'http://feversoul.com/jp/src/assets/img/placeholder_b.svg'
+          icon: 'http://www.pilakuma.com/jpt/src/assets/img/placeholder_b.svg'
         },
         stationPoint:{
-          icon: 'http://feversoul.com/jp/src/assets/img/bus.svg'
+          icon: 'http://www.pilakuma.com/jpt/src/assets/img/bus.svg'
         }
       };
       this.map = new google.maps.Map(document.getElementById('map-' + this.id), {
