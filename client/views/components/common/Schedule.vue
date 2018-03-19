@@ -1,7 +1,10 @@
 <template>
 <div id="schedule">
-    <div class="map-container schedule-map" style="position: absolute;z-index: 1;top:0;padding-bottom: 20px;height:100vh;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.2),  rgba(0, 0, 0, 0.1)),url(http://feversoul.com/jp/src/assets/img/banner/京都.jpg);background-size: cover;">
-      <GoogleMap :id='id' :center='center' :styles='styles' :from='from' :to='to' :waypts='waypts' :markers='markers'></GoogleMap>
+    <div class="map-container schedule-map" id="home-bg-map" style="position: absolute;z-index: 1;top:0;padding-bottom: 20px;height:100vh;background-image:linear-gradient(to right, rgba(0, 0, 0, 0.1),  rgba(0, 0, 0, 0.1)),url(http://feversoul.com/jp/src/assets/img/banner/京都.jpg);background-size: cover;overflow:hidden">
+      <div class="falling-leaves"></div>
+      <div v-bind:style="{width:'120%',height:'120%',transform:'rotate('+ mapRotate +'deg)'}">
+      <GoogleMap :panTo='panTo' :id='id' :zoom='8' :center='center' :from='from' :to='to' :waypts='waypts' :markers='markers'></GoogleMap>
+      </div>
     </div>
     <div class="station hidden-sm-down hidden-md-up">
       <div class="d-flex flex-wrap">
@@ -74,7 +77,7 @@
                     <h5 class="h5">Day2(0923)  - 築地、台場、汐留</h5>
                     <p>
                        日比谷公園散步看楓葉，Caretta 45F 觀景。<br/>
-                       築地市場新鮮海產 「築地站」，波除稻荷神社OR本願寺參觀<br/>
+                       築地市場新鮮海產 「築地站」，波除稻荷神社<br/>
                        月島漫步<br/>
                        台場高達，自由女神，睇彩虹橋<br/> 
                        大江戶溫泉物語<br/>
@@ -93,10 +96,10 @@
                     <div class="start"></div>
                   </div>
                   <div class="timeline-content">
-                    <h5 class="h5">Day3(0924) 東京都 - 千葉 Game Show</h5>
+                    <h5 class="h5">Day3(0924) 東京都 - 千葉 Game Show 秋葉原</h5>
                     <p>
-                      上午下午 千葉 -> GameShow -> <br/>
-                      下午 選項1 水鄉佐原 ； 選項2 勝浦 ； 選項3 秋葉原
+                      上午 GameShow -> 千葉IBM附近小餐館 <br/>
+                      下午&晚上 秋葉原 -> 神田万世橋 ->  電器街/UDX -> Yodobashi Akiba
                     </p>
                     <div class="w-100 text-right">
                       <span class="btn"><router-link to="/plan/3">MORE</router-link></span>
@@ -108,11 +111,13 @@
                     <div class="start"></div>
                   </div>
                   <div class="timeline-content right">
-                    <h5 class="h5">Day4(0925) 東京都 - 三鷹、練馬區、中野區</h5>
+                    <h5 class="h5">Day4(0925) 東京都 - 三鷹、練馬區、中野區、池袋</h5>
                     <p>
-                      雷門 -> 仲見世通 -> 淺草神社 <br/>
-                      吉卜力美術館 -> 中野區食烤肉 ->新宿逛街<br/>
+                      吉卜力美術館 -> 中野區食烤肉 -> J-WorldJ-WORLD TOKYO<br/>
                     </p>
+                    <div class="w-100 text-right">
+                      <span class="btn"><router-link to="/plan/4">MORE</router-link></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -124,12 +129,19 @@
                     <div class="start"></div>
                   </div>
                   <div class="timeline-content">
-                    <h5 class="h5">Day5(0926) 東京都 - 新宿、澀谷、目黑</h5>
+                    <h5 class="h5">Day5(0926) 東京都 - 澀谷、目黑、君の名は</h5>
                     <p>
-                      澀谷101 <br/>
+                      中目黑 -> 自由之丘 -> 澀谷101 -> 君の名は<br/>
                     </p>
+                    <div class="w-100 text-right">
+                      <span class="btn"><router-link to="/plan/5">MORE</router-link></span>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="inner-section-fixed">
                 <div class="timeline-item">
                   <div class="timeline-icon">
                     <div class="start"></div>
@@ -156,6 +168,10 @@
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="section">
+              <div class="inner-section-fixed">
                 <div class="timeline-item">
                   <div class="timeline-icon">
                     <div class="start"></div>
@@ -242,7 +258,7 @@ export default {
           from:'東京',
           to:'京都',
           waypts:[{location:'湘南',stopover:true},{location:'箱根',stopover:true},{location:'名古屋',stopover:true}],
-          center: {lat: 35.7075734, lng: 139.7320827},
+          center: {lat: 35.10000, lng: 138.10000},
           markers: [
             {
               loc:{lat:35.709026,lng:139.731992},
@@ -253,6 +269,10 @@ export default {
               title:'湘南',
             },
             {
+              loc:{lat:35.250817,lng:139.047959},
+              title:'箱根',
+            },
+            {
               loc:{lat:35.181446,lng:136.906398},
               title:'名古屋'
             },
@@ -261,370 +281,12 @@ export default {
               title:'京都'
             }
           ],
-          styles:[
-              {
-                  "featureType": "all",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "all",
-                  "elementType": "labels.icon",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "administrative",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "administrative",
-                  "elementType": "geometry.fill",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 20
-                      }
-                  ]
-              },
-              {
-                  "featureType": "administrative",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 17
-                      },
-                      {
-                          "weight": 1.2
-                      }
-                  ]
-              },
-              {
-                  "featureType": "administrative.province",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#CDDC39"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "administrative.locality",
-                  "elementType": "labels.text.fill",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#3a3a3a"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "administrative.locality",
-                  "elementType": "labels.text.stroke",
-                  "stylers": [
-                      {
-                          "weight": "3"
-                      },
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#ffffff"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "landscape",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "landscape",
-                  "elementType": "geometry",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 20
-                      }
-                  ]
-              },
-              {
-                  "featureType": "poi",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "poi",
-                  "elementType": "geometry",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 21
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway",
-                  "elementType": "geometry.fill",
-                  "stylers": [
-                      {
-                          "color": "#ffffff"
-                      },
-                      {
-                          "lightness": 17
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway",
-                  "elementType": "geometry.stroke",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 29
-                      },
-                      {
-                          "weight": 0.2
-                      },
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway",
-                  "elementType": "labels.text.fill",
-                  "stylers": [
-                      {
-                          "color": "#ffffff"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway",
-                  "elementType": "labels.text.stroke",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway.controlled_access",
-                  "elementType": "geometry.fill",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#ffffff"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.highway.controlled_access",
-                  "elementType": "geometry.stroke",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.arterial",
-                  "elementType": "geometry",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 18
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.arterial",
-                  "elementType": "geometry.fill",
-                  "stylers": [
-                      {
-                          "color": "#ffffff"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.arterial",
-                  "elementType": "geometry.stroke",
-                  "stylers": [
-                      {
-                          "color": "#ffffff"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.arterial",
-                  "elementType": "labels.text",
-                  "stylers": [
-                      {
-                          "color": "#ff0000"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.arterial",
-                  "elementType": "labels.text.fill",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.arterial",
-                  "elementType": "labels.text.stroke",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.local",
-                  "elementType": "geometry",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 16
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.local",
-                  "elementType": "geometry.fill",
-                  "stylers": [
-                      {
-                          "color": "#ffffff"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.local",
-                  "elementType": "geometry.stroke",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.local",
-                  "elementType": "labels.text",
-                  "stylers": [
-                      {
-                          "color": "#ffffff"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "road.local",
-                  "elementType": "labels.text.fill",
-                  "stylers": [
-                      {
-                          "visibility": "on"
-                      },
-                      {
-                          "color": "#000000"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "transit",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "transit",
-                  "elementType": "geometry",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 19
-                      }
-                  ]
-              },
-              {
-                  "featureType": "water",
-                  "elementType": "all",
-                  "stylers": [
-                      {
-                          "visibility": "off"
-                      }
-                  ]
-              },
-              {
-                  "featureType": "water",
-                  "elementType": "geometry",
-                  "stylers": [
-                      {
-                          "color": "#000000"
-                      },
-                      {
-                          "lightness": 17
-                      }
-                  ]
-              }
-          ],
           backgroundColor:'hsla(0, 0%, 0%, 0)',
-          zoom:19
+          zoom:19,
+          mapRotate:-30,
+          windowWidth:0,
+          windowHeight:0,
+          panTo:null
         }
     },
     beforeCreate(){
@@ -637,25 +299,220 @@ export default {
     },
     destroyed(){
     },
+    methods: {
+      getWindowSize(event) {
+        console.log('a')
+        this.windowWidth = document.documentElement.clientWidth;
+        this.windowHeight = document.documentElement.clientHeight;
+        this.mapRotate = (document.documentElement.clientWidth/document.documentElement.clientHeight)*90 - 20;
+      },
+      setPanTo(index){
+        console.log(index);
+        var pan = [0,0,0,0,0,1,2,3,4,4];
+        if(index > 1){
+          this.panTo = {location:this.markers[pan[index]]['loc']};
+        }else{
+          this.panTo = {location:this.center};
+        }
+      }
+    },
     mounted() {
+      //window.addEventListener('resize', this.getWindowSize);
+      var self = this;
       $('#schedule').fullpage({
         menu: '#menu',
         scrollingSpeed: 1000,
         scrollOverflow: true,
+        navigation: true,
         normalScrollElements:'.normal-scroll',
         fixedElements:'.schedule-map',
         afterLoad: function(anchorLink, index){
           var loadedSection = $(this);
-          console.log(index);
+          self.setPanTo(index);
         }
       });
       $.fn.fullpage.reBuild();
+      var LeafScene = function(el) {
+          this.viewport = el;
+          this.world = document.createElement('div');
+          this.leaves = [];
+
+          this.options = {
+            numLeaves: 20,
+            wind: {
+              magnitude: 1.2,
+              maxSpeed: 6,
+              duration: 300,
+              start: 0,
+              speed: 0
+            },
+          };
+
+          this.width = this.viewport.offsetWidth;
+          this.height = this.viewport.offsetHeight;
+
+          // animation helper
+          this.timer = 0;
+
+          this._resetLeaf = function(leaf) {
+
+            // place leaf towards the top left
+            leaf.x = this.width * 2 - Math.random()*this.width*1.75;
+            leaf.y = -10;
+            leaf.z = Math.random()*200;
+            if (leaf.x > this.width) {
+              leaf.x = this.width + 10;
+              leaf.y = Math.random()*this.height/2;
+            }
+            // at the start, the leaf can be anywhere
+            if (this.timer == 0) {
+              leaf.y = Math.random()*this.height;
+            }
+
+            // Choose axis of rotation.
+            // If axis is not X, chose a random static x-rotation for greater variability
+            leaf.rotation.speed = Math.random()*10;
+            var randomAxis = Math.random();
+            if (randomAxis > 0.5) {
+              leaf.rotation.axis = 'X';
+            } else if (randomAxis > 0.25) {
+              leaf.rotation.axis = 'Y';
+              leaf.rotation.x = Math.random()*180 + 90;
+            } else {
+              leaf.rotation.axis = 'Z';
+              leaf.rotation.x = Math.random()*360 - 180;
+              // looks weird if the rotation is too fast around this axis
+              leaf.rotation.speed = Math.random()*3;
+            }
+
+            // random speed
+            leaf.xSpeedVariation = Math.random() * 0.8 - 0.4;
+            leaf.ySpeed = Math.random() + 1.5;
+
+            return leaf;
+          }
+
+          this._updateLeaf = function(leaf) {
+            var leafWindSpeed = this.options.wind.speed(this.timer - this.options.wind.start, leaf.y);
+
+            var xSpeed = leafWindSpeed + leaf.xSpeedVariation;
+            leaf.x -= xSpeed;
+            leaf.y += leaf.ySpeed;
+            leaf.rotation.value += leaf.rotation.speed;
+
+            var t = 'translateX( ' + leaf.x + 'px ) translateY( ' + leaf.y + 'px ) translateZ( ' + leaf.z + 'px )  rotate' + leaf.rotation.axis + '( ' + leaf.rotation.value + 'deg )';
+            if (leaf.rotation.axis !== 'X') {
+              t += ' rotateX(' + leaf.rotation.x + 'deg)';
+            }
+            leaf.el.style.webkitTransform = t;
+            leaf.el.style.MozTransform = t;
+            leaf.el.style.oTransform = t;
+            leaf.el.style.transform = t;
+
+            // reset if out of view
+            if (leaf.x < -10 || leaf.y > this.height + 10) {
+              this._resetLeaf(leaf);
+            }
+          }
+
+          this._updateWind = function() {
+            // wind follows a sine curve: asin(b*time + c) + a
+            // where a = wind magnitude as a function of leaf position, b = wind.duration, c = offset
+            // wind duration should be related to wind magnitude, e.g. higher windspeed means longer gust duration
+
+            if (this.timer === 0 || this.timer > (this.options.wind.start + this.options.wind.duration)) {
+
+              this.options.wind.magnitude = Math.random() * this.options.wind.maxSpeed;
+              this.options.wind.duration = this.options.wind.magnitude * 50 + (Math.random() * 20 - 10);
+              this.options.wind.start = this.timer;
+
+              var screenHeight = this.height;
+
+              this.options.wind.speed = function(t, y) {
+                // should go from full wind speed at the top, to 1/2 speed at the bottom, using leaf Y
+                var a = this.magnitude/2 * (screenHeight - 2*y/3)/screenHeight;
+                return a * Math.sin(2*Math.PI/this.duration * t + (3 * Math.PI/2)) + a;
+              }
+            }
+          }
+        }
+
+      LeafScene.prototype.init = function() {
+
+        for (var i = 0; i < this.options.numLeaves; i++) {
+          var leaf = {
+            el: document.createElement('div'),
+            x: 0,
+            y: 0,
+            z: 0,
+            rotation: {
+              axis: 'X',
+              value: 0,
+              speed: 0,
+              x: 0
+            },
+            xSpeedVariation: 0,
+            ySpeed: 0,
+            path: {
+              type: 1,
+              start: 0,
+
+            },
+            image: 1
+          };
+          this._resetLeaf(leaf);
+          this.leaves.push(leaf);
+          this.world.appendChild(leaf.el);
+        }
+
+        this.world.className = 'leaf-scene';
+        this.viewport.appendChild(this.world);
+
+        // set perspective
+        this.world.style.webkitPerspective = "400px";
+        this.world.style.MozPerspective = "400px";
+        this.world.style.oPerspective = "400px";
+        this.world.style.perspective = "400px";
+        
+        // reset window height/width on resize
+        var self = this;
+      }
+
+      LeafScene.prototype.render = function() {
+        this._updateWind();
+        for (var i = 0; i < this.leaves.length; i++) {
+          this._updateLeaf(this.leaves[i]);
+        }
+
+        this.timer++;
+
+        requestAnimationFrame(this.render.bind(this));
+      }
+
+      // start up leaf scene
+      var leafContainer = document.querySelector('.falling-leaves'),
+          leaves = new LeafScene(leafContainer);
+
+      leaves.init();
+      leaves.render();
     }
 }
 
 </script>
 
 <style lang="scss">
+#home-bg-map{
+  &:before{
+    content:'';
+    width: 100%;
+    height:100%;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.1);
+  }
+}
 #schedule{
   position: relative;
   z-index: 2;
@@ -680,5 +537,42 @@ export default {
       height:auto;
     }
   }
+}
+.falling-leaves {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, 0);
+  z-index: 9;
+  border-radius: 50px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.leaf-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+      z-index: 9;
+    transform-style: preserve-3d;
+
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      z-index: 9;
+      background: url(https://image.flaticon.com/icons/svg/234/234908.svg) no-repeat;
+      background-size: 100%;
+      transform-style: preserve-3d;
+      backface-visibility: visible;
+      opacity: 0.9;
+    }
 }
 </style>

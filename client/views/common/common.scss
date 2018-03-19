@@ -107,8 +107,8 @@ $timeline-color: $primary-color;
   }  
 
   header{
-    opacity: 0.9;
-    background-color: $timeline-color;
+    //opacity: 0.9;
+    background-color: rgba(0,0,0,0.3);
     color:#fff;
     height: 40px;
     position: fixed;
@@ -260,9 +260,9 @@ $timeline-color: $primary-color;
   }
   #timeline {
     width: 100%;
-      margin: 30px auto;
+    margin: 30px auto;
     position: relative;
-      padding: 0 10px;
+    padding: 0 10px;
     @include prefix(transition, all .4s ease);
 
     &:before {
@@ -315,7 +315,9 @@ $timeline-color: $primary-color;
 
       .timeline-content {
         width: 45%;
-        background: #fff;
+        //background: #fff;
+        color: #fff;
+        background-color: rgba(0,0,0,0.5);
         padding: 20px;
         @include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
         @include prefix(border-radius, 5px);
@@ -326,7 +328,7 @@ $timeline-color: $primary-color;
           margin: -20px -20px 0 -20px;
           font-weight: 300;
           @include prefix(border-radius, 3px 3px 0 0);
-          background: $timeline-color;
+          //background: $timeline-color;
         }
         p{
           padding-top: 10px;
@@ -341,7 +343,7 @@ $timeline-color: $primary-color;
           height: 0; 
           border-top: 7px solid transparent;
           border-bottom: 7px solid transparent; 
-          border-left:7px solid $timeline-color; 
+          border-left:7px solid #fff; 
         }
 
         &.right {
@@ -352,7 +354,7 @@ $timeline-color: $primary-color;
             right: 45%;
             left: inherit;
             border-left: 0;
-            border-right: 7px solid $timeline-color;
+            border-right: 7px solid #fff;
           }
         }
       }
@@ -464,17 +466,17 @@ $timeline-color: $primary-color;
     padding: 5px 15px;
     text-decoration: none;
     background: transparent;
-    border: 2px solid lighten($primary-color, 10%);
-    color: lighten($primary-color, 10%);
+    border: 2px solid lighten(#fff, 10%);
+    color: lighten(#fff, 10%);
     display: inline-block;
     position: relative;
     text-transform: uppercase;
     font-size: 12px;
     @include prefix(border-radius, 5px);
     @include prefix(transition, background .3s ease);
-    @include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
+    @include prefix(box-shadow, 2px 2px 0 lighten(#fff, 10%));
     a{
-      color: lighten($primary-color, 10%);
+      color: lighten(#fff, 10%);
     }
     &:hover {
       box-shadow: none ;
@@ -528,7 +530,18 @@ $timeline-color: $primary-color;
   $arrowColor:#f27c7c;
   $speed: 1s;
 
-
+  .go-down{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    margin-top: -15px;
+    transform: translateY(0px);
+    animation: arrowDown $speed cubic-bezier(0.0, 0.6, 1.0, 0.4) infinite .5s;
+    cursor: pointer;
+  }
 
   .icon-arrow {
     @media screen and (max-width: 768px) {
@@ -597,6 +610,11 @@ $timeline-color: $primary-color;
       margin-left: -13px;
       transform: translateY(50px) rotateZ(45deg);
     }
+  }
+
+  @keyframes arrowDown {
+    0%   { transform: translateY(-20px)}
+    100%   { transform: translateY(20px)}
   }
 
   @keyframes tipUp {

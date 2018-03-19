@@ -1,7 +1,7 @@
 <template>
   <div class="content" id="content-mapcard">
     <div id="mapcard">
-      <div v-for="(h, index) in hotels" :key="index" class="mapcard-item section" data-bgimg="http://feversoul.com/jp/src/assets/img/banner/skytree.jpg" v-bind:style="{backgroundImage:'linear-gradient(to right, rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('+ h.bgimg +')'}">
+      <div v-for="(h, index) in hotels" :key="index" class="mapcard-item section" data-bgimg="http://feversoul.com/jp/src/assets/img/banner/skytree.jpg" v-bind:style="{backgroundImage:'linear-gradient(to right, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('+ h.bgimg +')'}">
         <div class="inner-section">
           <div class="row">
             <div class="col-md-5">
@@ -56,7 +56,7 @@
            <div class="mt-5">
               <div class="photos-gallery row">
                 <div v-for="(p, index) in h.photos" :key="index" class="col-6 col-sm-3" style="padding:20px">
-                    <div class="rs-img-bg div-circle" v-bind:style="{width:'100%',paddingTop:'100%',paddingBottom:'0',margin:'20px',backgroundImage:'url('+p+')'}">
+                    <div class="rs-img-bg div-circle floating" v-bind:style="{width:'100%',paddingTop:'calc(100% - 10px)',border:'5px solid #fff',paddingBottom:'0',backgroundImage:'url('+p+')',animationDuration:3+index*0.2+'s'}">
                     </div>
                 </div>
               </div>
@@ -672,4 +672,18 @@ export default {
     overflow: hidden;
   }
 }
+.photos-gallery{
+  .floating {  
+      animation-name: floating;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      margin-top: 5px;
+  }
+}
+@keyframes floating {
+    from { transform: translate(0,  0px);}
+    65%  { transform: translate(15px, 15px);}
+    to   { transform: translate(-0px, -0px);}    
+}
+
 </style>

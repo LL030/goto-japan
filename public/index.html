@@ -12,6 +12,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.esm.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.7.0/vue-router.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="http://feversoul.com/jp/src/assets/css/jquery.fullPage.css?ver=1.0.1">
@@ -30,11 +31,281 @@
           font-size: 14px;
           color: #eb3a44;
       }
+      #svg{
+        width: 60%;
+        margin: 0 auto;
+        display: block;
+      }
     </style>
 </head>
 <body class="jp-travel">
+    <!-- <svg id="svg" viewBox="50 -100 800 800"></svg> -->
     <div id="app">
     </div>
+    <script type="text/javascript">
+      var svg = Snap("#svg");
+      
+
+      var p1 = svg.path().attr({
+          //points:[0,50, 20,50, 30,20, 50,70],
+          //200 180
+          path:"M0,300 l50,0"
+             + "a120,80,0,0,1,0,-70"
+
+             + "a120,80,0,0,1,20,-19"
+             + "a40,40,0,0,0,-37,-24"
+             + "a32,32,0,0,0,17,43"
+
+             + "a32,32,0,1,1,44,-30"
+             + "a120,80,0,0,1,70,0"
+             + "a32,32,0,1,1,44,30"
+
+             + "a120,80,0,0,0,-20,-19"
+             + "a40,40,0,0,1,37,-24"
+             + "a32,32,0,0,1,-17,43"
+
+             + "a120,80,0,0,1,0,70"
+             + "l100,0"
+             + "l-50,-50 a10,10,0,0,1,60,-50 a10,10,0,0,1,60,50 l-50,50"
+             + "l100,0"
+             + "a30,80,0,0,1,10,-80"
+             + "a15,16,0,1,1,12,-20"
+             + "a60,40,0,0,1,90,0"
+             + "a15,16,0,1,1,12,20"
+             + "a30,80,0,0,1,10,80"
+             + "l70,0,"
+             + "a330,330,0,1,0,-660,0"
+             + "a330,330,0,0,0,20,110"
+             + "l40,0,"
+             ,
+          fill:'none',
+          'stroke-dashoffset':0,
+          'stroke-dasharray':3020,
+            stroke: "#f07",
+            strokeWidth: 2
+        });
+
+
+      //kuma mouth
+      var p3 = svg.ellipse(128, 280, 35, 22).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'none',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      //kuma mouth
+      var p4 = svg.circle(128, 274, 5).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#f07',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      //kuma mouth
+      var p5 = svg.path().attr({
+        path:"M126,275"
+           + "a20,20,0,0,1,-15,13"
+           + "a20,20,0,0,0,17,-9"
+           + "a20,20,0,0,0,17,9"
+           + "a20,20,0,0,1,-15,-13",
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+        fill:'#f07',
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+      var g1 = svg.g(p3,p4,p5);
+      //kuma eye
+      var p6 = svg.circle(85, 258, 8).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#f07',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      //kuma eye
+      var p7 = svg.circle(171, 258, 8).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#f07',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      var g2 = svg.g(p6,p7);
+
+      //bai mouth
+      var p8 = svg.path().attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        path:"M490,257"
+           + "a10,7,0,1,1,8,0"
+           + "l0 5"
+           //+ "l18 0"
+           + "a4,1,0,0,1,18,0"
+           //+ "m0 0 q5 -3, 20 0"
+           + "a10,8,0,1,1,-44,0"
+           //+ "m0 0 q5 -3, 20 0"
+           + "a4,1,0,0,1,18,0"
+           + "l0 -5"
+           ,
+        fill:'#f07',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      //bai eye
+      var p9 = svg.circle(465, 235, 6).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#f07',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      //bai eye
+      var p10 = svg.circle(525, 235, 6).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#f07',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      var g3 = svg.g(p9,p10);
+
+      //bai dimple
+      var p11 = svg.ellipse(450, 250, 6, 5).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#fb8595',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#fb8595",
+          strokeWidth: 2
+      });
+
+      //bai dimple
+      var p12 = svg.ellipse(540, 250, 6, 5).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#fb8595',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#fb8595",
+          strokeWidth: 2
+      });
+
+      var g4 = svg.g(p11,p12);
+
+      //bai eye
+      var p13 = svg.ellipse(435, 205, 6, 8).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#f07',
+        'transform-origin':'50% 50%',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+      p13.transform('r-40,0,0');
+
+      //bai eye
+      var p14 = svg.ellipse(555, 205, 6, 8).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        fill:'#f07',
+        'transform-origin':'50% 50%',
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          stroke: "#f07",
+          strokeWidth: 2
+      });
+
+      var text1 = svg.text(50, 430, ["TOKYO  ","HERE  ","WE  ","GO"]).attr({
+        //points:[0,50, 20,50, 30,20, 50,70],
+        //200 180.
+        'font-size':60,
+        fill:'#f07',
+          stroke: "#f07",
+        'stroke-dashoffset':0,
+        'stroke-dasharray':850,
+          strokeWidth: 2
+      });
+
+      p14.transform('r40,0,0');
+
+      var g5 = svg.g(p13,p14)
+
+      var gKuma = svg.g(g1,g2);
+      var gBai = svg.g(g3,g4,g5,p8);
+
+
+      function infAnimate() {
+            p1.animate({
+               'stroke-dashoffset': 3050
+            }, 0, mina.linner, function(){
+              text1.animate({
+                  'opacity': 0
+              }, 0, mina.linner, function(){
+              });
+              gKuma.animate({
+                  'opacity': 0
+              }, 0, mina.linner, function(){
+              });
+              gBai.animate({
+                  'opacity': 0
+              }, 0, mina.linner, function(){
+              });
+              p1.animate({
+                  'stroke-dashoffset': 2000
+              }, 1000, mina.linner, function(){
+                gKuma.animate({
+                    'opacity': 1
+                }, 1000, mina.linner, function(){
+                });
+                p1.animate({
+                    'stroke-dashoffset': 1000
+                }, 1000, mina.linner, function(){
+                  gBai.animate({
+                      'opacity': 1
+                  }, 1000, mina.linner, function(){
+                  });
+                  p1.animate({
+                      'stroke-dashoffset': 0
+                  }, 1000, mina.linner, function(){
+                    text1.animate({
+                        'opacity': 1
+                    }, 1000, mina.linner, function(){
+                      infAnimate();
+                    });
+                  });
+                });
+              });
+            });
+       };
+
+      infAnimate();
+    </script>
     <script src="/catalog/bundle.js"></script>
     <script src="http://developers.google.cn/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script><!-- 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVw1_JjXxdPMjZPluDqsXrVQV0AuaGRsU&callback=vueGoogleMapsInit"></script> -->
